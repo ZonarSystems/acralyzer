@@ -49,7 +49,7 @@
                 $scope.reports = data.rows;
                 $scope.totalReports = data.total_rows;
                 for(var row = 0; row < $scope.reports.length; row++) {
-                    $scope.reports[row].displayDate = moment($scope.reports[row].key).fromNow();
+                    $scope.reports[row].displayDate = acralyzerConfig.formatDate($scope.reports[row].key);
                 }
             },
             function(response, getResponseHeaders){
@@ -126,7 +126,7 @@
                     mergeBugsLists($scope.bugs, data.rows);
                     $scope.totalBugs = data.total_rows;
                     for(var row = 0; row < $scope.bugs.length; row++) {
-                        $scope.bugs[row].latest = moment($scope.bugs[row].value.latest).fromNow();
+                        $scope.bugs[row].latest = acralyzerConfig.formatDate($scope.bugs[row].value.latest);
                     }
                 },
                 function(response, getResponseHeaders){

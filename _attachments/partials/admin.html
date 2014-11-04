@@ -22,6 +22,10 @@
             </pane>
             <pane heading="Preferences">
                 <p>Your default reports database is <select ng-model="acralyzerConfig.defaultApp" ng-options="app for app in apps" ng-change="storeDefaultApp()"></select></p>
+                <p>Display dates as <input type="radio" ng-model="acralyzerConfig.displayRelativeDates" value="">&nbsp;timestamps</input>
+                <input type="radio" ng-model="acralyzerConfig.displayRelativeDates" value="true">&nbsp;relative dates</input>
+                </p>
+
             </pane>
             <pane heading="Users">
                 <div ng-show='acralyzer.cloudant'>
