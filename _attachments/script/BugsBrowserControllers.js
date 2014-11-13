@@ -126,7 +126,7 @@
                     mergeBugsLists($scope.bugsList, data.rows);
                     $scope.totalBugs = data.total_rows;
                     for(var row = 0; row < $scope.bugsList.length; row++) {
-                        $scope.bugsList[row].latest = moment($scope.bugsList[row].value.latest).fromNow();
+                        $scope.bugsList[row].latest = acralyzerConfig.formatDate($scope.bugsList[row].value.latest);
                     }
                     $scope.loading = false;
                 },

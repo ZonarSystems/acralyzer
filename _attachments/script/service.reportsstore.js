@@ -108,7 +108,7 @@
                     data.next_row = data.rows.splice(reportsCount,1)[0];
                 }
                 for(var row = 0; row < data.rows.length; row++) {
-                    data.rows[row].displayDate = moment(data.rows[row].key).fromNow();
+                    data.rows[row].displayDate = acralyzerConfig.formatDate(data.rows[row].key);
                 }
                 cb(data);
             };
@@ -147,11 +147,11 @@
 
                 for(var row = 0; row < data.rows.length; row++) {
                     if(filterName === "bug") {
-                        data.rows[row].displayDate = moment(data.rows[row].key[3]).fromNow();
+                        data.rows[row].displayDate = acralyzerConfig.formatDate(data.rows[row].key[3]);
                     } else if(filterName === "bug-by-installation-id") {
-                        data.rows[row].displayDate = moment(data.rows[row].key[4]).fromNow();
+                        data.rows[row].displayDate = acralyzerConfig.formatDate(data.rows[row].key[4]);
                     } else {
-                        data.rows[row].displayDate = moment(data.rows[row].key[1]).fromNow();
+                        data.rows[row].displayDate = acralyzerConfig.formatDate(data.rows[row].key[1]);
                     }
                 }
 
